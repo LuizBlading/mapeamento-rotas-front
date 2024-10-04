@@ -1,0 +1,36 @@
+.content {
+    display: block;
+    margin: 15px;
+
+    .btnContainer {
+        .btn-aplicativo {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            // background-color: #7f5af0;
+            background-color: transparent;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+    
+            i {
+                margin-right: 10px;
+            }
+        }
+
+        .btn-aplicativo:hover {
+            opacity: 0.8;
+        }
+    }
+
+    .rotas {
+        display: flex;
+        flex-direction: column;
+        margin: 30px;
+    }
+}
+

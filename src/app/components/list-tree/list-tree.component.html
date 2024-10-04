@@ -1,0 +1,27 @@
+<div>
+    <div>
+        <label>Pesquisar por nome: </label>
+        <input type="text" placeholder="NOME APLICATIVO">
+    </div>
+    <div>
+        <label>Pesquisar por rota: </label>
+        <input type="text" placeholder="ROTA">
+    </div>
+</div>
+
+@for (aplicativo of aplicativos; track aplicativo.idAplicativo) {
+    <div class="content">
+        <div class="btnContainer">
+            <button class="btn-aplicativo" (click)="showRoutes(aplicativo)"><i class="pi pi-angle-right
+                "></i>{{ aplicativo.nomeAplicativo }}</button>
+        </div>
+        <div class="rotas" 
+            [@openClose]="showText && aplicativo.idAplicativo == this.idAplicativo ? 'open' : 'closed'">
+                @for (rota of aplicativo.rotas; track rota.idRota) {
+                    <span> - {{ rota.nomeRotaApi }}</span>
+                } @empty {
+                    <span> - {{ "Não tem rota cadastrada" }} </span>
+                }
+        </div>
+    </div>
+}
